@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deregulation — John Counts</title>
+  <meta name="description" content="Deregulation page for John Counts for District 5." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Metropolis:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    .circle-scene {
+      position:relative;
+      width:min(100vw, 560px);
+      max-width:100%;
+      aspect-ratio:1;
+      margin:0 auto;
+      display:grid;
+      place-items:center;
+      transition:transform 0.4s ease;
+    }
+    .circle {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:rgba(255,255,255,0.95);
+      border:4px solid var(--accent);
+      color:var(--accent-dark);
+      font-family:var(--font-sans);
+      font-weight:700;
+      text-align:center;
+      cursor:pointer;
+      user-select:none;
+      box-shadow:0 18px 36px rgba(0,0,0,0.12);
+      transition:transform 0.4s ease, opacity 0.3s ease;
+    }
+    .main.circle {
+      width:180px;
+      height:180px;
+      padding:1rem;
+      z-index:5;
+    }
+    .orbit-container {
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+    }
+    .orbit {
+      width:180px;
+      height:180px;
+      position:absolute;
+      opacity:0;
+      transform:scale(0.5);
+      pointer-events:auto;
+      padding:0.75rem;
+    }
+    .circle-scene.show-orbits .orbit {
+      opacity:1;
+      transform:translate(-50%, -50%) scale(1);
+    }
+    .orbit-1 { top:6%; left:50%; transform:translate(-50%, -50%) scale(0.5); }
+    .orbit-2 { top:23%; left:84%; transform:translate(-50%, -50%) scale(0.5); }
+    .orbit-3 { top:61%; left:93%; transform:translate(-50%, -50%) scale(0.5); }
+    .orbit-4 { top:90%; left:68%; transform:translate(-50%, -50%) scale(0.5); }
+    .orbit-5 { top:90%; left:32%; transform:translate(-50%, -50%) scale(0.5); }
+    .orbit-6 { top:61%; left:7%; transform:translate(-50%, -50%) scale(0.5); }
+    .orbit-7 { top:23%; left:16%; transform:translate(-50%, -50%) scale(0.5); }
+    .orbit span {
+      position:relative;
+      z-index:2;
+      font-size:.82rem;
+      line-height:1.3;
+      padding:0 0.8rem;
+      display:block;
+      word-break:break-word;
+      overflow-wrap:anywhere;
+    }
+    .orbit::before { left:50%; top:50%; }
+    .orbit-1::before { transform:translateY(-50%) rotate(270deg); }
+    .orbit-2::before { transform:translateY(-50%) rotate(330deg); }
+    .orbit-3::before { transform:translateY(-50%) rotate(30deg); }
+    .orbit-4::before { transform:translateY(-50%) rotate(90deg); }
+    .orbit-5::before { transform:translateY(-50%) rotate(150deg); }
+    .orbit-6::before { transform:translateY(-50%) rotate(210deg); }
+    .orbit-7::before { transform:translateY(-50%) rotate(270deg); }
+    .orbit:hover { animation:pulse 1.2s ease infinite; }
+    .main.circle:hover { animation:main-pulse 1.2s ease infinite; }
+    @keyframes pulse {
+      0%, 100% { transform:translate(-50%, -50%) scale(1); }
+      50% { transform:translate(-50%, -50%) scale(1.03); }
+    }
+    @keyframes main-pulse {
+      0%, 100% { transform:scale(1); }
+      50% { transform:scale(1.03); }
+    }
+    .detail-overlay {
+      position:absolute;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:transparent;
+      z-index:20;
+      padding:1rem;
+    }
+    .detail-overlay.active {
+      display:flex;
+    }
+    .detail-card {
+      width:min(100%, 520px);
+      background:#fff;
+      border:4px solid var(--accent);
+      border-radius:18px;
+      box-shadow:0 24px 48px rgba(0,0,0,0.2);
+      padding:2rem;
+      text-align:center;
+      color:var(--navy);
+    }
+    .detail-card p { margin:0; line-height:1.4; }
+    .detail-card .detail-close {
+      margin-top:1rem;
+      color:rgba(0,0,0,0.6);
+      font-size:.9rem;
+    }
+    .main.circle:focus-visible {
+      outline:3px solid rgba(0,0,0,0.16);
+    }
+  </style>
+</head>
+<body>
+  <div id="stitch-bg" class="stitch-bg"></div>
+  <div id="porcupine-tl" class="porcupine top-left" aria-hidden="true"></div>
+  <div id="porcupine-tr" class="porcupine top-right" aria-hidden="true"></div>
+  <div id="porcupine-bl" class="porcupine bottom-left" aria-hidden="true"></div>
+  <div id="porcupine-br" class="porcupine bottom-right" aria-hidden="true"></div>
+
+  <main>
+    <section id="about" class="container about" style="min-height:100vh; display:flex; align-items:center; justify-content:center; padding:0;">
+      <div class="circle-scene" id="circleScene" aria-label="Deregulation network">
+        <div id="mainCircle" class="circle main" role="button" tabindex="0">Deregulation</div>
+        <div class="orbit-container">
+          <div class="circle orbit orbit-1"><span>Dogs on Beach</span></div>
+          <div class="circle orbit orbit-2"><span>Beach Driving/Public Beach Access</span></div>
+          <div class="circle orbit orbit-3"><span>Flooding</span></div>
+          <div class="circle orbit orbit-4"><span>Government Financial Responsibility</span></div>
+          <div class="circle orbit orbit-5"><span>Homelessness</span></div>
+          <div class="circle orbit orbit-6"><span>Tourism</span></div>
+          <div class="circle orbit orbit-7"><span>Supporting Police</span></div>
+        </div>
+        <div id="detailOverlay" class="detail-overlay" role="dialog" aria-modal="true" tabindex="-1">
+          <div class="detail-card">
+            <p id="detailOverlayText">Tap any circle to see details.</p>
+            <img id="detailOverlayImage" src="" alt="Orbit detail image" style="display:none;width:100%;max-width:100%;margin-top:1rem;border-radius:12px;" />
+            <div id="detailOverlayLink" style="margin-top:1rem;"></div>
+            <p class="detail-next">Tap for more</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div style="text-align:center; margin:2rem 0;">
+    <div style="width:auto; max-width:180px; aspect-ratio:1/1; margin:0 auto; border-radius:50%; overflow:hidden; box-shadow:0 12px 24px rgba(0,0,0,0.12);">
+      <video src="rando pics/eighth animation.MP4" autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; display:block;">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <div style="text-align:center; margin:2rem 0;">
+    <a class="btn primary" href="index.html">Home</a>
+  </div>
+
+  <script>
+    const mainCircle = document.getElementById('mainCircle');
+    const scene = document.getElementById('circleScene');
+    let active = false;
+
+    function toggleOrbits() {
+      active = !active;
+      scene.classList.toggle('show-orbits', active);
+    }
+
+    mainCircle.addEventListener('click', toggleOrbits);
+    mainCircle.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleOrbits();
+      }
+    });
+
+    const orbitButtons = scene.querySelectorAll('.orbit');
+    const overlay = document.getElementById('detailOverlay');
+    const overlayText = document.getElementById('detailOverlayText');
+    const overlayImage = document.getElementById('detailOverlayImage');
+    const overlayLink = document.getElementById('detailOverlayLink');
+    let currentOrbitKey = null;
+    let detailImageVisible = false;
+    let detailStep = 0;
+
+    const detailMap = {
+      'orbit-1': 'Do not limit enforcement to sheriff (current arrangement), enable lifeguards to give out citations to people breaking rules',
+      'orbit-2': 'Support beach driving, maintain current areas available to drive on, no further limiting',
+      'orbit-3': 'Use $10 million on locally funded flood insurance rather than health insurance, when a home floods offer the owner full price of home (prior to flood) so they are able to re-locate out of flood plain - one time offer, if owner chooses to stay, their choice but will just have to accept risk living in flood plain',
+      'orbit-4': 'Decreasing government = decreasing government financial responsibility',
+      'orbit-5': 'Daytona Beach was sued when it made panhandling illegal, however the city can enforce blocking sidewalk laws',
+      'orbit-6': 'Yes support Tortugas but not with government money',
+      'orbit-7': 'Expand & empower police so they are equipped & confident to focus on genuinely dangerous offenders, not low level, non-violent individuals who are the easiest to arrest. Many people currently being arrested are clearly struggling - worn-down, not well-served by incarceration & unlikely to benefit from it. Objective should be smarter triaging: reserve jail for those who pose real risk & direct others toward more constructive & not more costly paths like substance use treatment, counseling, education, job training. Use citations & direct diversion programs particularly for younger people where a criminal record can permanently limit their life. This approach strengthens public safety while also recognizing the long-term consequences of how we choose to enforce the law.'
+    };
+
+    orbitButtons.forEach(orbit => {
+      orbit.addEventListener('click', () => {
+        scene.classList.add('show-orbits');
+        const key = Array.from(orbit.classList).find(c => c.startsWith('orbit-'));
+        currentOrbitKey = key;
+        detailStep = 0;
+        detailImageVisible = false;
+        overlayImage.style.display = 'none';
+        overlayImage.src = '';
+        overlayText.textContent = detailMap[key] || 'More information about this topic.';
+        overlayLink.innerHTML = '';
+        overlay.classList.add('active');
+      });
+    });
+
+    overlay.addEventListener('click', () => {
+      if (currentOrbitKey === 'orbit-2' && !detailImageVisible) {
+        overlayImage.src = 'assets/images/img_6680.jpg';
+        overlayImage.style.display = 'block';
+        overlayText.textContent = '';
+        detailImageVisible = true;
+        return;
+      }
+      if (currentOrbitKey === 'orbit-1' && detailStep === 0) {
+        detailStep = 1;
+        overlayText.textContent = 'No more dog beaches until people show responsibility complying with current rules.';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-1' && detailStep === 1) {
+        detailStep = 2;
+        overlayText.textContent = 'Once current rules are followed, consider opening additional dog beaches. but if i step in one peice of dog shit on the beach, all dogs will die';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-3' && detailStep === 0) {
+        detailStep = 1;
+        overlayText.textContent = 'The army corps of engineers report for Daytona Beach is only regarding a 2.1 square mile area bordered by Nova, Ridgewood, Orange & Beville where there are 8k residents & 2,800 structures. There has been $80 million in property damage from flooding in this area. This study is $4.2 million, equating to a cost of $525/resident or $1500/structure.';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-3' && detailStep === 1) {
+        detailStep = 2;
+        overlayText.textContent = 'Right now study is incompletely funded';
+        overlayLink.innerHTML = '<a href="flooding.html" class="btn outline" onclick="event.stopPropagation()">More flooding info</a>';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-5' && detailStep === 0) {
+        detailStep = 1;
+        overlayText.textContent = 'Incentives for sterilization';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-5' && detailStep === 1) {
+        detailStep = 2;
+        overlayText.textContent = 'First step shelter, which serves 100 people at a time, cost $2.5 million (County funded). County provided $400k in 2025, $300k in 2026, then will provide $200k annually. The Continuum of Care FL-504 For Daytona/Volusia/Flagler receives federal funding, approximately $1.8 million/year. A $336k federal grant for emergency solutions for Volusia was given to Halifax Urban Ministries, Salvation Army Daytona Beach and the Volusia/Flagler Coalition for homeless.';
+        overlayLink.innerHTML = '<a href="homelessness.html" class="btn outline" onclick="event.stopPropagation()">More homelessness info</a>';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-6' && detailStep === 0) {
+        detailStep = 1;
+        overlayText.textContent = 'De-stigmatization of night life';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-6' && detailStep === 1) {
+        detailStep = 2;
+        overlayText.textContent = 'Safer workplaces for exotic dancers';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-6' && detailStep === 2) {
+        detailStep = 3;
+        overlayText.textContent = 'Tip jars instead of getting close to patrons';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-6' && detailStep === 3) {
+        detailStep = 4;
+        overlayText.textContent = 'Deregulation = Increased small business';
+        overlayLink.innerHTML = '<a href="safety-by-prioritizing-resources.html" class="btn outline" onclick="event.stopPropagation()">Go to Safety page</a>';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-7' && detailStep === 0) {
+        detailStep = 1;
+        overlayText.textContent = 'Not cops fault when they have to enforce overly harsh laws. Decriminalize marijuana and sex work.';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-7' && detailStep === 1) {
+        detailStep = 2;
+        overlayText.textContent = 'Decriminalize open-container';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-7' && detailStep === 2) {
+        detailStep = 3;
+        overlayText.textContent = 'Policing is sometimes poorly calibrated to the situation';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-7' && detailStep === 3) {
+        detailStep = 4;
+        overlayText.textContent = 'Bring back the drunk tank';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-7' && detailStep === 4) {
+        detailStep = 5;
+        overlayText.textContent = 'Larger focus on safety by aligning resources to go against violent offenders';
+        overlayLink.innerHTML = '';
+        return;
+      }
+      if (currentOrbitKey === 'orbit-7' && detailStep === 5) {
+        detailStep = 6;
+        overlayText.textContent = 'Decriminalization non-violent offenses';
+        overlayLink.innerHTML = '<a href="safety-by-prioritizing-resources.html" class="btn outline" onclick="event.stopPropagation()">Go to Safety page</a>';
+        return;
+      }
+      overlay.classList.remove('active');
+      currentOrbitKey = null;
+      detailStep = 0;
+      detailImageVisible = false;
+      overlayImage.style.display = 'none';
+      overlayImage.src = '';
+      overlayText.textContent = 'Tap any circle to see details.';
+      overlayLink.innerHTML = '';
+    });
+  </script>
+</body>
+</html>

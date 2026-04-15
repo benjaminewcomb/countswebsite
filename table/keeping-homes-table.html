@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Keeping homes table</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <style>
+    body{margin:0;padding:1.5rem;background:transparent;}
+    .table-frame{width:100%;height:100%;}
+    .spreadsheet-table{width:100%;border-collapse:collapse;}
+    .spreadsheet-table th,
+    .spreadsheet-table td{border:1px solid rgba(0,0,0,.12);padding:.75rem;text-align:left;}
+    .table-container{max-height:100%;overflow:auto;}
+  </style>
+</head>
+<body>
+  <div class="container about">
+    <div class="text-box">
+      <div class="table-container">
+        <table class="spreadsheet-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function parseCSV(text) {
+        const rows = [];
+        let row = [];
+        let field = '';
+        let inQuotes = false;
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          const nextChar = text[i + 1];
+
+          if (char === '"') {
+            if (inQuotes && nextChar === '"') {
+              field += '"';
+              i += 1;
+            } else {
+              inQuotes = !inQuotes;
+            }
+            continue;
+          }
+
+          if (char === ',' && !inQuotes) {
+            row.push(field);
+            field = '';
+            continue;
+          }
+
+          if (char === '\r') {
+            continue;
+          }
+
+          if (char === '\n' && !inQuotes) {
+            row.push(field);
+            rows.push(row);
+            row = [];
+            field = '';
+            continue;
+          }
+
+          field += char;
+        }
+        if (field !== '' || row.length > 0) {
+          row.push(field);
+          rows.push(row);
+        }
+        return rows;
+      }
+
+      function renderTable(rows) {
+        const table = document.querySelector('.spreadsheet-table');
+        const thead = table.querySelector('thead');
+        const tbody = table.querySelector('tbody');
+
+        if (!rows.length) return;
+
+        const headerRow = document.createElement('tr');
+        rows[0].forEach(cellText => {
+          const th = document.createElement('th');
+          th.textContent = cellText;
+          headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+
+        for (let i = 1; i < rows.length; i++) {
+          const rowEl = document.createElement('tr');
+          rows[i].forEach(cellText => {
+            const td = document.createElement('td');
+            td.textContent = cellText;
+            rowEl.appendChild(td);
+          });
+          tbody.appendChild(rowEl);
+        }
+      }
+
+      fetch('vcpa_parcel_export_2026220153837.csv')
+        .then(response => response.text())
+        .then(text => {
+          const rows = parseCSV(text);
+          renderTable(rows);
+        })
+        .catch(error => {
+          const container = document.querySelector('.table-container');
+          container.innerHTML = '<p>Unable to load table data.</p>';
+          console.error(error);
+        });
+    </script>

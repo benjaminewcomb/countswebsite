@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Compare your votes to Counts' on recent commission agendas — John Counts</title>
+  <meta name="description" content="Compare your votes to Counts' on recent commission agendas page for John Counts for District 5." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Metropolis:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    .quiz-box{background:#fff;color:var(--navy);padding:1.5rem;border-radius:12px;box-shadow:0 12px 24px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.06);margin:2rem 0;}
+    .quiz-image-wrapper{max-width:100%;text-align:center;margin-top:1rem;position:relative;}
+    .quiz-image-wrapper img{max-width:100%;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.08);}
+    .quiz-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,0.45);background:rgba(0,0,0,0.4);border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s ease;}
+    .quiz-overlay.visible{opacity:1;}
+    .quiz-overlay.counts-agrees{background-image:url("counts_agrees.jpg");background-position:center;background-repeat:no-repeat;background-size:contain;color:transparent;text-shadow:none;}
+    .quiz-explanation{margin-top:1rem;color:var(--navy);font-size:1rem;line-height:1.5;min-height:3rem;}
+    .quiz-explanation img{display:block;max-width:100%;height:auto;border-radius:8px;margin-top:1rem;}
+    .quiz-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;}
+    .quiz-footer{display:flex;gap:1rem;justify-content:center;align-items:center;margin-top:1rem;}
+    .quiz-status{font-weight:700;color:var(--navy);}
+    .quiz-link a{color:var(--accent);font-weight:700;text-decoration:none;}
+    .loop-circle { width:18%; max-width:180px; aspect-ratio:1/1; border-radius:50%; object-fit:cover; display:block; margin:0 auto; }
+  </style>
+</head>
+<body>
+  <div id="stitch-bg" class="stitch-bg"></div>
+  <div id="porcupine-tl" class="porcupine top-left" aria-hidden="true"></div>
+  <div id="porcupine-tr" class="porcupine top-right" aria-hidden="true"></div>
+  <div id="porcupine-bl" class="porcupine bottom-left" aria-hidden="true"></div>
+  <div id="porcupine-br" class="porcupine bottom-right" aria-hidden="true"></div>
+
+  <div class="deco-heading-text">
+    <h2>Compare your votes to Counts' on recent commission agendas</h2>
+  </div>
+
+  <main>
+    <section id="about" class="container about">
+      <div style="text-align:center; margin:1.5rem 0; font-weight:700; color:var(--navy);">
+        Link to agenda: <a href="https://codb.civicweb.net/document/224118/" target="_blank" rel="noopener">City Commission Agenda 02/18</a>
+      </div>
+      <div class="quiz-box" id="quiz-box-02-18">
+        <h3></h3>
+        <p>Review each 02/18 agenda image and choose whether you would approve or deny.</p>
+        <div class="quiz-image-wrapper">
+          <img id="quiz1-image" src="commission-meeting-images/image_01_03.jpg" alt="Commission agenda image 02/18" />
+          <div id="quiz1-overlay" class="quiz-overlay"></div>
+        </div>
+        <div id="quiz1-explanation" class="quiz-explanation"></div>
+        <div class="quiz-actions">
+          <button id="approve1-btn" class="btn primary" type="button">Approve</button>
+          <button id="deny1-btn" class="btn outline" type="button">Deny</button>
+        </div>
+        <div class="quiz-footer">
+          <button id="back1-btn" class="btn outline" type="button">Back</button>
+          <button id="next1-btn" class="btn primary" type="button">Next</button>
+          <span id="quiz1-status" class="quiz-status">Image 1 of 23</span>
+        </div>
+      </div>
+      <div style="margin:2rem 0; text-align:center;">
+        <h3>02/18 Agenda PDF</h3>
+        <iframe src="https://codb.civicweb.net/document/224118/#toolbar=0" style="width:100%;min-height:700px;border:1px solid rgba(0,0,0,0.12);border-radius:12px;" title="Commission Agenda 02/18 PDF"></iframe>
+      </div>
+      <div style="text-align:center; margin:1.5rem 0; font-weight:700; color:var(--navy);">
+        Link to agenda: <a href="https://codb.civicweb.net/document/224504/" target="_blank" rel="noopener">City Commission Agenda 03/04</a>
+      </div>
+      <div class="quiz-box" id="quiz-box-03-04">
+        <h3></h3>
+        <p>Review each 03/04 agenda image and choose whether you would approve or deny.</p>
+        <div class="quiz-image-wrapper">
+          <img id="quiz2-image" src="commission-meeting-images/image_06_05.jpg" alt="Commission agenda image 03/04" />
+          <div id="quiz2-overlay" class="quiz-overlay"></div>
+        </div>
+        <div id="quiz2-explanation" class="quiz-explanation"></div>
+        <div class="quiz-actions">
+          <button id="approve2-btn" class="btn primary" type="button">Approve</button>
+          <button id="deny2-btn" class="btn outline" type="button">Deny</button>
+        </div>
+        <div class="quiz-footer">
+          <button id="back2-btn" class="btn outline" type="button">Back</button>
+          <button id="next2-btn" class="btn primary" type="button">Next</button>
+          <span id="quiz2-status" class="quiz-status">Image 1 of 17</span>
+        </div>
+      </div>
+      <div style="margin:2rem 0; text-align:center;">
+        <h3>03/04 Agenda PDF</h3>
+        <iframe src="https://codb.civicweb.net/document/224504/#toolbar=0" style="width:100%;min-height:700px;border:1px solid rgba(0,0,0,0.12);border-radius:12px;" title="Commission Agenda 03/04 PDF"></iframe>
+      </div>
+      <div style="text-align:center; margin:1.5rem 0; font-weight:700; color:var(--navy);">
+        Link to agenda: <a href="https://codb.civicweb.net/document/224941/" target="_blank" rel="noopener">City Commission Agenda 03/18</a>
+      </div>
+      <div class="quiz-box" id="quiz-box-03-18">
+        <h3></h3>
+        <p>Review each 03/18 agenda image and choose whether you would approve or deny.</p>
+        <div class="quiz-image-wrapper">
+          <img id="quiz3-image" src="commission-meeting-images/IMG_6141_1.jpg" alt="Commission agenda image 03/18" />
+          <div id="quiz3-overlay" class="quiz-overlay"></div>
+        </div>
+        <div id="quiz3-explanation" class="quiz-explanation"></div>
+        <div class="quiz-actions">
+          <button id="approve3-btn" class="btn primary" type="button">Approve</button>
+          <button id="deny3-btn" class="btn outline" type="button">Deny</button>
+        </div>
+        <div class="quiz-footer">
+          <button id="back3-btn" class="btn outline" type="button">Back</button>
+          <button id="next3-btn" class="btn primary" type="button">Next</button>
+          <span id="quiz3-status" class="quiz-status">Image 1 of 16</span>
+        </div>
+      </div>
+      <div style="margin:2rem 0; text-align:center;">
+        <h3>03/18 Agenda PDF</h3>
+        <iframe src="https://codb.civicweb.net/document/224941/#toolbar=0" style="width:100%;min-height:700px;border:1px solid rgba(0,0,0,0.12);border-radius:12px;" title="Commission Agenda 03/18 PDF"></iframe>
+      </div>
+      <div style="text-align:center; margin:2rem 0;">
+        <video class="loop-circle" src="rando pics/ninthanimation.MP4" autoplay muted loop playsinline></video>
+      </div>
+      <div style="text-align:center; margin:2rem 0;">
+        <a class="btn primary" href="index.html">Home</a>
+      </div>
+    </section>
+  </main>
+  <script>
+    const quizItems1 = [
+      { image: "image_01_03.jpg", candidateAnswer: "Approve", alwaysAgree: true, approveReasoning: "Vehicles being replaced are a 2015 Chevy Silverado 1500 with 169,051 miles & a 2015 Chevy Silverado 1500 with 156,589 miles. However $5k less should be spent by not equiping new trucks with assist steps & only having emergency lighting on back of truck rather than front, back, and sides.", denyReasoning: "Vehicles being replaced are a 2015 Chevy Silverado 1500 with 169,051 miles & a 2015 Chevy Silverado 1500 with 156,589 miles. Both need to be replaced but without assist steps, side and front pulsing LED lights - would still have lights on back. This would save $2644/truck, decreasing total cost by $5,288", approveScreenshots: ["answers/IMG_6791.jpg","answers/IMG_6792.jpg","answers/IMG_6793.jpg","answers/IMG_6794.jpg","answers/IMG_6795.jpg"], denyScreenshots: ["answers/IMG_6791.jpg","answers/IMG_6792.jpg","answers/IMG_6793.jpg","answers/IMG_6794.jpg","answers/IMG_6795.jpg"] },
+      { image: "image_01_01.jpg", candidateAnswer: "Deny", approveReasoning: "Costs city $9.9 million for health + $360k for dental + $73,500 for group life/accidental death and dismemberment. Lifestyle and behavioral choices will become more important to individuals without insurance. Should be up to individuals to find and buy insurance themselves. Instead of paying this more than $10 million to insurance company -> pay more to individuals then let them decide if they want to spend it on insurance or pay health bills PRN. Even a $5 million increase in pay will be cheaper for the city and greatly helpful to individuals.", denyReasoning: "Costs city $9.9 million for health + $360k for dental + $73,500 for group life/accidental death and dismemberment. Lifestyle and behavioral choices will become more important to individuals without insurance. Should be up to individuals to find and buy insurance themselves. Instead of paying this more than $10 million to insurance company -> pay more to individuals then let them decide if they want to spend it on insurance or pay health bills PRN. Even a $5 million increase in pay will be cheaper for the city and greatly helpful to individuals.", approveScreenshots: ["answers/image.png"], denyScreenshots: ["answers/image.png"] },
+      { image: "image_01_02.jpg", candidateAnswer: "Deny", approveReasoning: "These costs should be left to owner or private investor up for rehabing the building", denyReasoning: "These costs should be left to owner or private investor up for rehabing the building" },
+      { image: "image_01_05.jpg", candidateAnswer: "Approve", approveReasoning: "Makes sense & no cost", denyReasoning: "Makes sense & no cost" },
+      { image: "image_06_03.jpg", candidateAnswer: "Deny", alwaysAgree: true, approveReasoning: "Contingent on laser focus by police for targeting dangerous criminals threatening crimes with violence, decriminalization non-violent offenses like marijuana possession, paraphenalia possession, underage drinking, fake ids, decrease targeting the young/old. If we are getting ballistic shields -> a greater expectation of police promptly responding to threats of violence. However yes the current ballistic shields are expired and in poor condition. Not specifically for targeting illegal aliens - decriminalize this non-violent offense - especially for nations we share border with.", denyReasoning: "Contingent on laser focus by police for targeting dangerous criminals threatening crimes with violence, decriminalization non-violent offenses like marijuana possession, paraphenalia possession, underage drinking, fake ids, decrease targeting the young/old. If we are getting ballistic shields -> a greater expectation of police promptly responding to threats of violence. However yes the current ballistic shields are expired and in poor condition. Not specifically for targeting illegal aliens - decriminalize this non-violent offense - especially for nations we share border with.", approveScreenshots: ["answers/image.png"], denyScreenshots: ["answers/image.png"] },
+      { image: "image_06_04.jpg", candidateAnswer: "Approve", alwaysAgree: true, approveReasoning: "Contingent on decreasing price and using people/citizens in city. Current quote includes Journeyman for $85/hour & laborerers for $65/hour - use same paint the company proposed was going to use as materials are only quoted at $1599.", denyReasoning: "Use a company within Daytona. Current quote includes Journeyman for $85/hour & laborerers for $65/hour - use same paint the company proposed was going to use as materials are only quoted at $1599." },
+      { image: "image_01_04.jpg", candidateAnswer: "Deny", alwaysAgree: true, approveReasoning: "Use local companies, divide work if necessary. No gas powered leaf-blowers, quiet, no disturbing peace equipment, pay no more than current quote: $100/palm tree trim, $35/H for laborer, $45/hour for foreman. Rather than replacing bare areas with sod, transition to xeriscaping/Florida friendly landscaping to preserve water. Ormond Lawn Care was cited as failure to comply with section 5-4 (providing required bid security prior to bid submittal) and then cited as nonresponsive - maybe re-check with them as they are more local.", denyReasoning: "Use local companies, divide work if necessary. No gas powered leaf-blowers, quiet, no disturbing peace equipment, pay no more than current quote: $100/palm tree trim, $35/H for laborer, $45/hour for foreman. Rather than replacing bare areas with sod, transition to xeriscaping/Florida friendly landscaping to preserve water. Ormond Lawn Care was cited as failure to comply with section 5-4 (providing required bid security prior to bid submittal) and then cited as nonresponsive - maybe re-check with them as they are more local." },
+      { image: "image_02_02.jpg", candidateAnswer: "Approve", approveReasoning: "Does not cost money and sounds necessary", denyReasoning: "Does not cost money and sounds necessary" },
+      { image: "image_02_03.jpg", candidateAnswer: "Approve", approveReasoning: "Granted by the HOA", denyReasoning: "Granted by the HOA" },
+      { image: "image_02_04.jpg", candidateAnswer: "Approve", approveReasoning: "For infrastructure - these are used for water treatment/filtration suspended solids", denyReasoning: "For infrastructure - these are used for water treatment/filtration suspended solids" },
+      { image: "image_02_05.jpg", candidateAnswer: "Approve", approveReasoning: "For infrastructure - do not want people to have to go into sewer", denyReasoning: "For infrastructure - do not want people to have to go into sewer" },
+      { image: "image_02_06.jpg", candidateAnswer: "Approve", approveReasoning: "This lift structure at 210 N Seagrave St was constructed in the early 1940s, it is a city owned wet pit/dry pit master lift station that serves 6 upstream lift stations & conveys flow to Bethune Point Water Reclamation Facility -> needs replacement due to its aging infrastructure, restricted access to cleaning & maintenance due to current design & general degradation from aging & environmental conditions. Construction of a new lift station is required to ensure reliable service is maintained to the community. Ensure new station compliant/workable with any potential ASR Well plans if applicable.", denyReasoning: "This lift structure at 210 N Seagrave St was constructed in the early 1940s, it is a city owned wet pit/dry pit master lift station that serves 6 upstream lift stations & conveys flow to Bethune Point Water Reclamation Facility -> needs replacement due to its aging infrastructure, restricted access to cleaning & maintenance due to current design & general degradation from aging & environmental conditions. Construction of a new lift station is required to ensure reliable service is maintained to the community. Ensure new station compliant/workable with any potential ASR Well plans if applicable." },
+      { image: "image_03_02.jpg", candidateAnswer: "Deny", approveReasoning: "No zone specific fund program, any pet projects can be funded individually through comissioner's personal funds", denyReasoning: "No zone specific fund program, any pet projects can be funded individually through comissioner's personal funds" },
+      { image: "image_03_03.jpg", candidateAnswer: "Deny", approveReasoning: "Volusia Forever provides funds for county aquisition of environmentally sensitive lands. Volusia Forever received 61% voter approval in 2000 & 76% voter approval in 2020. Recommend ownership go to people whose money is buying -> i.e. instead of the county the land go to the citizen's whose $ purchased the land. Pool citizen's money together to promote conservation, keep government money out of equation. Private citizens will have more money by not being taxed for this and they can decide how to use it.", denyReasoning: "Volusia Forever provides funds for county aquisition of environmentally sensitive lands. Volusia Forever received 61% voter approval in 2000 & 76% voter approval in 2020. Recommend ownership go to people whose money is buying -> i.e. instead of the county the land go to the citizen's whose $ purchased the land. Pool citizen's money together to promote conservation, keep government money out of equation. Private citizens will have more money by not being taxed for this and they can decide how to use it." },
+      { image: "image_03_04.jpg", candidateAnswer: "Approve", approveReasoning: "Deregulation - promote flexability & cutting red tape around mobile food vendors", denyReasoning: "Deregulation - promote flexability & cutting red tape around mobile food vendors" },
+      { image: "image_03_06.jpg", candidateAnswer: "Approve", approveReasoning: "This is private property & the owner should be able to use how they want. Promote deregulation, get rid of special uses permits if allowed in zoning - if zoning permits, special uses permits should not be needed.", denyReasoning: "This is private property & the owner should be able to use how they want. Promote deregulation, get rid of special uses permits if allowed in zoning - if zoning permits, special uses permits should not be needed." },
+      { image: "image_03_05.jpg", candidateAnswer: "Approve", approveReasoning: "Private property, government should not meddle", denyReasoning: "Private property, government should not meddle" },
+      { image: "image_04_02.jpg", candidateAnswer: "Approve", approveReasoning: "Taxpayer owned property, taxpayers should be able to use", denyReasoning: "Taxpayer owned property, taxpayers should be able to use" },
+      { image: "image_04_03.jpg", candidateAnswer: "Approve", approveReasoning: "90,000 served by the system & project, that is about $911/person", denyReasoning: "90,000 served by the system & project, that is about $911/person" },
+      { image: "image_05_01.jpg", candidateAnswer: "Approve", approveReasoning: "Infrastructure", denyReasoning: "Infrastructure" },
+      { image: "image_05_02.jpg", candidateAnswer: "Deny", alwaysAgree: true, approveReasoning: "Brennan water treatment plant was built in 1972 and requires upgrades, see screenshots from agenda below for more info", denyReasoning: "We need to work on becoming as independent as possible from the federal government, see screenshots from agenda below for more info", approveScreenshots: ["answers/Screenshot 2026-04-10 225853.png","answers/Screenshot 2026-04-10 225928.png","answers/Screenshot 2026-04-10 225958.png","answers/Screenshot 2026-04-10 230249.png","answers/Screenshot 2026-04-10 230341.png","answers/Screenshot 2026-04-10 230426.png","answers/Screenshot 2026-04-10 230518.png","answers/Screenshot 2026-04-10 230554.png"], denyScreenshots: ["answers/Screenshot 2026-04-10 225853.png","answers/Screenshot 2026-04-10 225928.png","answers/Screenshot 2026-04-10 225958.png","answers/Screenshot 2026-04-10 230249.png","answers/Screenshot 2026-04-10 230341.png","answers/Screenshot 2026-04-10 230426.png","answers/Screenshot 2026-04-10 230518.png","answers/Screenshot 2026-04-10 230554.png"] },
+      { image: "image_05_03.jpg", candidateAnswer: "Approve", alwaysAgree: true, approveReasoning: "But contingent on getting a cheaper price, although the trucks being replaced were clearly heavily used and if you get used trucks you will just have to replace them sooner. One of the vehicles being replaced is said to have 11,591 hours of service with one hour of service equating up to 60 miles which would mean the vehicle has 695k miles on it.", denyReasoning: "Contingent on geting a cheaper price. Four of the proposed vehicles are 2026s. Recommend purchasing used vehicles with less than 60k miles and at least 2014 year. Yes these dump trucks and heavy utility vehicles are needed but maybe could fine lower prices for the 2 Chevy Silverado 3500HDs. 8 vehicles for $1 million, thats $125k/vehicle.One of the vehicles being replaced is said to have 11,591 hours of service with one hour of service equating up to 60 miles which would mean the vehicle has 695k miles on it.", approveScreenshots: ["answers/IMG_6198.jpg"], denyScreenshots: ["answers/IMG_6198.jpg"] },
+      { image: "image_06_02.jpg", candidateAnswer: "Approve", approveReasoning: "Sensus meters are the only ones that work with equipment", denyReasoning: "Sensus meters are the only ones that work with equipment" }
+    ];
+
+    const quizItems2 = [
+      { image: "image_06_05.jpg", candidateAnswer: "Approve", approveReasoning: "Necessary for maintaining democracy/republic/voting", denyReasoning: "Necessary for maintaining democracy/republic/voting" },
+      { image: "image_06_06.jpg", candidateAnswer: "Approve", approveReasoning: "Necessary for maintaining democracy/republic/voting", denyReasoning: "Necessary for maintaining democracy/republic/voting" },
+      { image: "image_06_07.jpg", candidateAnswer: "Approve", approveReasoning: "Necessary for maintaining democracy/republic/voting", denyReasoning: "Necessary for maintaining democracy/republic/voting" },
+      { image: "image_07_02.jpg", candidateAnswer: "Approve", approveReasoning: "Necessary -> get rid of linkage fees", denyReasoning: "Necessary -> get rid of linkage fees", approveScreenshots: ["answers/IMG_6199.jpg"], denyScreenshots: ["answers/IMG_6199.jpg"] },
+      { image: "image_07_03.jpg", candidateAnswer: "Approve", approveReasoning: "Necessary", denyReasoning: "Necessary", approveScreenshots: ["answers/IMG_6200.jpg"], denyScreenshots: ["answers/IMG_6200.jpg"] },
+      { image: "image_07_04.jpg", candidateAnswer: "Approve", approveReasoning: "Regarding a waste pro site spill involving underground storage tanks in 1991. This has been happening since 1991, work to resolve, Stantec has successfully assisted the city with multiple FDEP related sites over the past decade, is working on a site across from 925 S. Clyde Morris Blvd & has intimate knowledge of current issue; Stantec has 'anticipated engineering & institutional controls that will facilitate closure of the waste pro site.", denyReasoning: "Regarding a waste pro site spill involving underground storage tanks in 1991. This has been happening since 1991, work to resolve, Stantec has successfully assisted the city with multiple FDEP related sites over the past decade, is working on a site across from 925 S. Clyde Morris Blvd & has intimate knowledge of current issue; Stantec has 'anticipated engineering & institutional controls that will facilitate closure of the waste pro site.", approveScreenshots: ["answers/IMG_6201.jpg"], denyScreenshots: ["answers/IMG_6201.jpg"] },
+      { image: "image_07_05.jpg", candidateAnswer: "Deny", alwaysAgree: true, approveReasoning: "See below", denyReasoning: "Work from home, 301 Jean St, sell property or rent out", approveScreenshots: ["answers/8G 3_4 (1).png"]},
+      { image: "image_07_06.jpg", candidateAnswer: "Deny", approveReasoning: "Privatize Peabody Auditorium", denyReasoning: "Privatize Peabody Auditorium" },
+      { image: "image_07_07.jpg", candidateAnswer: "Deny", alwaysAgree: true, approveReasoning: "MidFlorida is a nonprofit based in Daytona Beach that works on first time home buyer programs, credit counseling, and transitional housing", denyReasoning: "No government mandated income eligible residents, people can move to places they can afford, government controlled low-income housing hurts markets in the long run and ultimately hurts families by delaying what would be more affordable for them which would be moving to a more affordable area - a market where they can afford to live.", approveScreenshots: ["answers/IMG_6202.jpg","answers/IMG_6203.jpg","answers/IMG_6204.jpg"], denyScreenshots: ["answers/IMG_6202.jpg","answers/IMG_6203.jpg","answers/IMG_6204.jpg"]  },
+      { image: "image_08_02.jpg", candidateAnswer: "Deny", approveReasoning: "Any extra funds should go to necessary high cost items", denyReasoning: "Any extra funds should go to necessary high cost items" },
+      { image: "image_08_03.jpg", candidateAnswer: "Approve", approveReasoning: "Re-visiting agenda item 10. A. from 2/18 agenda; 90k are served by the system & project, that is approximately $911/person", denyReasoning: "Re-visiting agenda item 10. A. from 2/18 agenda; 90k are served by the system & project, that is approximately $911/person" },
+      { image: "image_08_04.jpg", candidateAnswer: "Approve", approveReasoning: "Re-visiting agenda item 10. B. from 2/18 agenda; infrastructure", denyReasoning: "Re-visiting agenda item 10. B. from 2/18 agenda; infrastructure" },
+      { image: "image_10_01.jpg", candidateAnswer: "Approve", approveReasoning: "Re-visiting agenda item 9. D. from 2/18 agenda; taxpayer owened property, taxpayers should be able to use.", denyReasoning: "Re-visiting agenda item 9. D. from 2/18 agenda; taxpayer owened property, taxpayers should be able to use." },
+      { image: "image_08_05.jpg", candidateAnswer: "Approve", approveReasoning: "Deregulation, less strict zoning", denyReasoning: "Deregulation, less strict zoning" , approveScreenshots: ["answers/9d #2.png"] },
+      { image: "image_09_02.jpg", candidateAnswer: "Approve", approveReasoning: "Deregulation, less strict zoning", denyReasoning: "Deregulation, less strict zoning" },
+      { image: "image_09_03.jpg", candidateAnswer: "Deny", approveReasoning: "The population has increased 38% from 2004 to 2023 in the St. John's water management district which includes Volusia County. Per the US Drought Monitor the majority of Florida is in an 'extreme drought'. Due to these to facts the aquifers are being depleted. Aquifers are important for storage of drinking water. We need to either use less water - maybe with xeriscaping, use desalination, or re-use blackwater - or maybe all three. It is the optics of this that are going to be so determinate of people's vote. People hear the phrase 'toilet-to-tap' & it just sounds intrinsically bad to anyone - of course we do not want toilet to tap. Please see link for an explanation of what the process actually involves and why it is being considered. Please do not believe the trash Facebook is throwing at the issue. If the gen pop wants to be involved in decsions, we have to be able to vote on reason not on click bait. <a href=\"reuse-blackwater-toilet-to-tap.html\">Re-use blackwater/toilet-to-tap</a>", denyReasoning: "The population has increased 38% from 2004 to 2023 in the St. John's water management district which includes Volusia County. Per the US Drought Monitor the majority of Florida is in an 'extreme drought'. Due to these to facts the aquifers are being depleted. Aquifers are important for storage of drinking water. We need to either use less water - maybe with xeriscaping, use desalination, or re-use blackwater - or maybe all three. It is the optics of this that are going to be so determinate of people's vote. People hear the phrase 'toilet-to-tap' & it just sounds intrinsically bad to anyone - of course we do not want toilet to tap. Please see link for an explanation of what the process actually involves and why it is being considered. Please do not believe the trash Facebook is throwing at the issue. If the gen pop wants to be involved in decsions, we have to be able to vote on reason not on click bait. <a href=\"reuse-blackwater-toilet-to-tap.html\">Re-use blackwater/toilet-to-tap</a>" },
+      { image: "image_09_04.jpg", candidateAnswer: "Approve", alwaysAgree: true, approveReasoning: "$500k/yr, generally large contracts are less expensive per unit while paying as needed can be more expensive", denyReasoning: "Pay as needed, $350/unit for wipers, fluid top off, oil change & safety check" }
+    ];
+
+    const quiz1ImageEl = document.getElementById('quiz1-image');
+    const quiz1StatusEl = document.getElementById('quiz1-status');
+    const approve1Btn = document.getElementById('approve1-btn');
+    const deny1Btn = document.getElementById('deny1-btn');
+    const next1Btn = document.getElementById('next1-btn');
+    const back1Btn = document.getElementById('back1-btn');
+    const quiz1Overlay = document.getElementById('quiz1-overlay');
+    const quiz1Explanation = document.getElementById('quiz1-explanation');
+    let currentIndex1 = 0;
+    const answers1 = Array(quizItems1.length).fill(null);
+
+    const quiz2ImageEl = document.getElementById('quiz2-image');
+    const quiz2StatusEl = document.getElementById('quiz2-status');
+    const approve2Btn = document.getElementById('approve2-btn');
+    const deny2Btn = document.getElementById('deny2-btn');
+    const next2Btn = document.getElementById('next2-btn');
+    const back2Btn = document.getElementById('back2-btn');
+    const quiz2Overlay = document.getElementById('quiz2-overlay');
+    const quiz2Explanation = document.getElementById('quiz2-explanation');
+    let currentIndex2 = 0;
+    const answers2 = Array(quizItems2.length).fill(null);
+
+    const quizItems3 = [
+      { image: "IMG_6141.jpg", candidateAnswer: "Approve", alwaysAgree: true, approveReasoning: "Yes the alcohol proceeds should cover costs", denyReasoning: "No $5k funding, no restriction that etoh proceeds go to city or nonprofit" },
+      { image: "IMG_6141_1.jpg", candidateAnswer: "Approve", approveReasoning: "See info", denyReasoning: "See info", approveScreenshots: ["answers/IMG_6788.jpg", "https://www.youtube.com/watch?v=bv_qJm_xMhM&start=1298&end=2541"], denyScreenshots: ["answers/IMG_6788.jpg", "https://www.youtube.com/watch?v=bv_qJm_xMhM&start=1298&end=2541"] },
+      { image: "IMG_6141_2.jpg", candidateAnswer: "Approve", approveReasoning: "Sandbagger donated to Port Orange, procedural", denyReasoning: "Sandbagger donated to Port Orange, procedural" },
+      { image: "IMG_6141_3.jpg", candidateAnswer: "Deny", approveReasoning: "If you want to work for the city you have to sign a sovereign immunity agreement so you cannot sue, working is a risk the worker takes on their own, jobs are associated with risk.", denyReasoning: "If you want to work for the city you have to sign a sovereign immunity agreement so you cannot sue, working is a risk the worker takes on their own, jobs are associated with risk." },
+      { image: "IMG_6142.jpg", candidateAnswer: "Deny", alwaysAgree: true, approveReasoning: "Contingent on a laser focus of police targeting dangerous criminals threatening crimes with violence; decriminalization non-violent offences like marijuana possession, paraphenelia possession, underage drinking, fake ids; decreased targeting of the young and old. Guns are 13 years old & a trade-in agreement is included for 392 firearms. Looking online these guns can cost up to $900. $650 for a 9mm Glock with red dot optics and a holster is quite the deal.", approveScreenshots: ["answers/Screen Shot 86_319 gun replacement.png"], denyReasoning: "Contingent on a laser focus of police targeting dangerous criminals threatening crimes with violence; decriminalization non-violent offences like marijuana possession, paraphenelia possession, underage drinking, fake ids; decreased targeting of the young and old.", denyScreenshots: ["answers/Screen Shot 86_319 gun replacement.png"] },
+      { image: "IMG_6142_1.jpg", candidateAnswer: "Approve", approveReasoning: "Procedural", denyReasoning: "Procedural" },
+      { image: "IMG_6142_2.jpg", candidateAnswer: "Deny", approveReasoning: "Privatize, get $ from those who use marina", denyReasoning: "Privatize, get $ from those who use marina", denyScreenshots: ["answers/Screen shot Pilings $759k.png"], approveScreenshots: ["answers/Screen shot Pilings $759k.png"] },
+      { image: "IMG_6142_3.jpg", candidateAnswer: "Deny", approveReasoning: "Work from home, rent private office space, privatize building, have public meetings at hotel or other venue; if necessary use local company.", denyReasoning: "Work from home, rent private office space, privatize building, have public meetings at hotel or other venue; if necessary use local company.", denyScreenshots: ["answers/Screen Shot Work Authorization No. 57.png"], approveScreenshots: ["answers/Screen Shot Work Authorization No. 57.png"] },
+      { image: "IMG_6143.jpg", candidateAnswer: "Approve", approveReasoning: "Necessary safety infrastructure; consider tip jar/donation/ask people regarding getting a big enough generator for the city - possibly use mayoral funds.", approveScreenshots: ["answers/Screen Shot $246145_319 rent generator.png"], denyReasoning: "Necessary safety infrastructure; consider tip jar/donation/ask people regarding getting a big enough generator for the city - possibly use mayoral funds.", denyScreenshots: ["answers/Screen Shot $246145_319 rent generator.png"] },
+      { image: "IMG_6143_1.jpg", candidateAnswer: "Deny", approveReasoning: "Not worth more than one million dollars, no construction started, if anything put a cop car on the corner or increase tickets/monitoring if dangerous intersection. Offer a million dollars in checks to citizens if you have the money to blow (it's our money). Try to get refund $122k. Likely will go over cost, always costs more and construction has not begun, do not approve these in future", denyReasoning: "Not worth more than one million dollars, no construction started, if anything put a cop car on the corner or increase tickets/monitoring if dangerous intersection. Offer a million dollars in checks to citizens if you have the money to blow (it's our money). Try to get refund $122k. Likely will go over cost, always costs more and construction has not begun, do not approve these in future", denyScreenshots: ["answers/IMG_6232.PNG"], approveScreenshots: ["answers/IMG_6232.PNG"]  },
+      { image: "IMG_6144.jpg", candidateAnswer: "Deny", approveReasoning: "People can move to where they can afford via market", denyReasoning: "People can move to where they can afford via market" },
+      { image: "IMG_6144_1.jpg", candidateAnswer: "Deny", approveReasoning: "Private company, private funding events, Mayoral funds can go to necessary costs like vehicles, power or AC units, guns, holsters, ballistic shields. If people want events they will have to directly fund them. Decrease permitting/licensing for events, increase penalties for bad management of events that create social costs", denyReasoning: "Private company, private funding events, Mayoral funds can go to necessary costs like vehicles, power or AC units, guns, holsters, ballistic shields. If people want events they will have to directly fund them. Decrease permitting/licensing for events, increase penalties for bad management of events that create social costs" },
+      { image: "IMG_6144_2.jpg", candidateAnswer: "Deny", approveReasoning: "The population has increased 38% from 2004 to 2023 in the St. John's water management district which includes Volusia County. Per the US Drought Monitor the majority of Florida is in an 'extreme drought'. Due to these to facts the aquifers are being depleted. Aquifers are important for storage of drinking water. We need to either use less water - maybe with xeriscaping, use desalination, or re-use blackwater - or maybe all three. It is the optics of this that are going to be so determinate of people's vote. People hear the phrase 'toilet-to-tap' & it just sounds intrinsically bad to anyone - of course we do not want toilet to tap. Please see link for an explanation of what the process actually involves and why it is being considered. Please do not believe the trash Facebook is throwing at the issue. If the gen pop wants to be involved in decsions, we have to be able to vote on reason not click bait. <a href=\"reuse-blackwater-toilet-to-tap.html\">Re-use blackwater/toilet-to-tap</a>", denyReasoning: "The population has increased 38% from 2004 to 2023 in the St. John's water management district which includes Volusia County. Per the US Drought Monitor the majority of Florida is in an 'extreme drought'. Due to these to facts the aquifers are being depleted. Aquifers are important for storage of drinking water. We need to either use less water - maybe with xeriscaping, use desalination, or re-use blackwater - or maybe all three. It is the optics of this that are going to be so determinate of people's vote. People hear the phrase 'toilet-to-tap' & it just sounds intrinsically bad to anyone - of course we do not want toilet to tap. Please see link for an explanation of what the process actually involves and why it is being considered. Please do not believe the trash Facebook is throwing at the issue. If the gen pop wants to be involved in decsions, we have to be able to vote on reason not click bait. <a href=\"reuse-blackwater-toilet-to-tap.html\">Re-use blackwater/toilet-to-tap</a>" },
+      { image: "IMG_6145.jpg", candidateAnswer: "Approve", approveReasoning: "It is free, not costing city any money, only requesting permit for the display.", denyReasoning: "It is free, not costing city any money, only requesting permit for the display." },
+      { image: "IMG_6146.jpg", candidateAnswer: "Deny", approveReasoning: "City needs money for guns, holsters, ballistic shields, AC units, vehicles inlcuding an ancient aerial fire vehicle - use money there - forget rebates - moving forward use recalculated fee schedule and more regular assessments. Seems like finding this extra money will go for nothing as it will cost as much money to assess and distribute if it gets too complex.", denyReasoning: "City needs money for guns, holsters, ballistic shields, AC units, vehicles inlcuding an ancient aerial fire vehicle - use money there - forget rebates - moving forward use recalculated fee schedule and more regular assessments. Seems like finding this extra money will go for nothing as it will cost as much money to assess and distribute if it gets too complex.", denyScreenshots: ["answers/Screen Shot 11B.png"], approveScreenshots: ["answers/Screen Shot 11B.png"] },
+      { image: "IMG_6146_1.jpg", candidateAnswer: "Approve", approveReasoning: "It is free, not costing city any money.", denyReasoning: "It is free, not costing city any money." },
+    ];
+
+    const quiz3ImageEl = document.getElementById('quiz3-image');
+    const quiz3StatusEl = document.getElementById('quiz3-status');
+    const approve3Btn = document.getElementById('approve3-btn');
+    const deny3Btn = document.getElementById('deny3-btn');
+    const next3Btn = document.getElementById('next3-btn');
+    const back3Btn = document.getElementById('back3-btn');
+    const quiz3Overlay = document.getElementById('quiz3-overlay');
+    const quiz3Explanation = document.getElementById('quiz3-explanation');
+    let currentIndex3 = 0;
+    const answers3 = Array(quizItems3.length).fill(null);
+
+    function getCurrentItem1() {
+      return quizItems1[currentIndex1];
+    }
+
+    function encodePath(path) {
+      return path.split('/').map(encodeURIComponent).join('/');
+    }
+
+    function getEmbedUrl(src) {
+      if (src.includes('youtube.com/watch')) {
+        var url = new URL(src);
+        var videoId = url.searchParams.get('v');
+        var start = url.searchParams.get('start') || url.searchParams.get('t') || '';
+        var end = url.searchParams.get('end') || '';
+        var embed = 'https://www.youtube.com/embed/' + videoId + '?rel=0';
+        if (start) embed += '&start=' + start;
+        if (end) embed += '&end=' + end;
+        return embed;
+      }
+      if (src.includes('youtu.be/')) {
+        var parts = src.split('/');
+        var id = parts[parts.length - 1];
+        return 'https://www.youtube.com/embed/' + id;
+      }
+      return src;
+    }
+
+    function renderExplanation(explanationEl, item, answer) {
+      explanationEl.innerHTML = answer === 'approve' ? item.approveReasoning : item.denyReasoning;
+      const attachments = answer === 'approve' ? item.approveScreenshots : item.denyScreenshots;
+      if (attachments && attachments.length) {
+        attachments.forEach(function(src) {
+          var trimmed = src.trim();
+          if (trimmed.includes('youtube.com') || trimmed.includes('youtu.be')) {
+            var iframe = document.createElement('iframe');
+            iframe.src = getEmbedUrl(trimmed);
+            iframe.width = '100%';
+            iframe.height = '315';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.style.marginTop = '1rem';
+            explanationEl.appendChild(iframe);
+            return;
+          }
+          var ext = trimmed.split('.').pop().toLowerCase();
+          var encodedSrc = encodePath(trimmed);
+          if (ext === 'mp4') {
+            var video = document.createElement('video');
+            video.controls = true;
+            video.playsInline = true;
+            video.muted = true;
+            video.style.maxWidth = '100%';
+            video.style.marginTop = '1rem';
+            var source = document.createElement('source');
+            source.src = encodedSrc;
+            source.type = 'video/mp4';
+            video.appendChild(source);
+            explanationEl.appendChild(video);
+          } else {
+            var img = document.createElement('img');
+            img.setAttribute('src', encodedSrc);
+            img.alt = 'Reason screenshot';
+            explanationEl.appendChild(img);
+          }
+        });
+      }
+    }
+
+    function renderAnswer1() {
+      const item = getCurrentItem1();
+      if (!answers1[currentIndex1]) {
+        quiz1Overlay.classList.remove('visible');
+        quiz1Overlay.classList.remove('counts-agrees');
+        quiz1Explanation.textContent = '';
+        return;
+      }
+      const isMatch = (answers1[currentIndex1] === 'approve' && item.candidateAnswer === 'Approve') ||
+                      (answers1[currentIndex1] === 'deny' && item.candidateAnswer === 'Deny');
+      if (item.alwaysAgree || isMatch) {
+        quiz1Overlay.classList.add('counts-agrees');
+        quiz1Overlay.textContent = '';
+      } else {
+        quiz1Overlay.classList.remove('counts-agrees');
+        quiz1Overlay.textContent = `Counts Vote: ${item.candidateAnswer}`;
+      }
+      renderExplanation(quiz1Explanation, item, answers1[currentIndex1]);
+      quiz1Overlay.classList.add('visible');
+    }
+
+    function updateQuiz1() {
+      const item = getCurrentItem1();
+      quiz1ImageEl.src = 'commission-meeting-images/' + item.image;
+      quiz1StatusEl.textContent = `Image ${currentIndex1 + 1} of ${quizItems1.length}`;
+      next1Btn.style.display = currentIndex1 === quizItems1.length - 1 ? 'none' : '';
+      back1Btn.style.display = currentIndex1 === 0 ? 'none' : '';
+      if (answers1[currentIndex1] === 'approve') {
+        approve1Btn.classList.add('primary');
+        approve1Btn.classList.remove('outline');
+        deny1Btn.classList.add('outline');
+        deny1Btn.classList.remove('primary');
+      } else if (answers1[currentIndex1] === 'deny') {
+        deny1Btn.classList.add('primary');
+        deny1Btn.classList.remove('outline');
+        approve1Btn.classList.add('outline');
+        approve1Btn.classList.remove('primary');
+      } else {
+        approve1Btn.classList.add('outline');
+        approve1Btn.classList.remove('primary');
+        deny1Btn.classList.add('outline');
+        deny1Btn.classList.remove('primary');
+      }
+      renderAnswer1();
+    }
+
+    function getCurrentItem2() {
+      return quizItems2[currentIndex2];
+    }
+
+    function renderAnswer2() {
+      const item = getCurrentItem2();
+      if (!answers2[currentIndex2]) {
+        quiz2Overlay.classList.remove('visible');
+        quiz2Overlay.classList.remove('counts-agrees');
+        quiz2Explanation.textContent = '';
+        return;
+      }
+      const isMatch = (answers2[currentIndex2] === 'approve' && item.candidateAnswer === 'Approve') ||
+                      (answers2[currentIndex2] === 'deny' && item.candidateAnswer === 'Deny');
+      if (item.alwaysAgree || isMatch) {
+        quiz2Overlay.classList.add('counts-agrees');
+        quiz2Overlay.textContent = '';
+      } else {
+        quiz2Overlay.classList.remove('counts-agrees');
+        quiz2Overlay.textContent = `Candidate Vote: ${item.candidateAnswer}`;
+      }
+      renderExplanation(quiz2Explanation, item, answers2[currentIndex2]);
+      quiz2Overlay.classList.add('visible');
+    }
+
+    function updateQuiz2() {
+      const item = getCurrentItem2();
+      quiz2ImageEl.src = 'commission-meeting-images/' + item.image;
+      quiz2StatusEl.textContent = `Image ${currentIndex2 + 1} of ${quizItems2.length}`;
+      next2Btn.style.display = currentIndex2 === quizItems2.length - 1 ? 'none' : '';
+      back2Btn.style.display = currentIndex2 === 0 ? 'none' : '';
+      if (answers2[currentIndex2] === 'approve') {
+        approve2Btn.classList.add('primary');
+        approve2Btn.classList.remove('outline');
+        deny2Btn.classList.add('outline');
+        deny2Btn.classList.remove('primary');
+      } else if (answers2[currentIndex2] === 'deny') {
+        deny2Btn.classList.add('primary');
+        deny2Btn.classList.remove('outline');
+        approve2Btn.classList.add('outline');
+        approve2Btn.classList.remove('primary');
+      } else {
+        approve2Btn.classList.add('outline');
+        approve2Btn.classList.remove('primary');
+        deny2Btn.classList.add('outline');
+        deny2Btn.classList.remove('primary');
+      }
+      renderAnswer2();
+    }
+
+    approve1Btn.addEventListener('click', () => {
+      answers1[currentIndex1] = 'approve';
+      updateQuiz1();
+    });
+
+    deny1Btn.addEventListener('click', () => {
+      answers1[currentIndex1] = 'deny';
+      updateQuiz1();
+    });
+
+    back1Btn.addEventListener('click', () => {
+      answers1[currentIndex1] = null;
+      currentIndex1 = (currentIndex1 - 1 + quizItems1.length) % quizItems1.length;
+      updateQuiz1();
+    });
+
+    function scrollToQuizTop(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    next1Btn.addEventListener('click', () => {
+      answers1[currentIndex1] = null;
+      if (currentIndex1 < quizItems1.length - 1) {
+        currentIndex1 += 1;
+        updateQuiz1();
+        scrollToQuizTop('quiz-box-02-18');
+      }
+    });
+
+    approve2Btn.addEventListener('click', () => {
+      answers2[currentIndex2] = 'approve';
+      updateQuiz2();
+    });
+
+    deny2Btn.addEventListener('click', () => {
+      answers2[currentIndex2] = 'deny';
+      updateQuiz2();
+    });
+
+    back2Btn.addEventListener('click', () => {
+      answers2[currentIndex2] = null;
+      currentIndex2 = (currentIndex2 - 1 + quizItems2.length) % quizItems2.length;
+      updateQuiz2();
+    });
+
+    next2Btn.addEventListener('click', () => {
+      answers2[currentIndex2] = null;
+      if (currentIndex2 < quizItems2.length - 1) {
+        currentIndex2 += 1;
+        updateQuiz2();
+        scrollToQuizTop('quiz-box-03-04');
+      }
+    });
+
+    function getCurrentItem3() {
+      return quizItems3[currentIndex3];
+    }
+
+    function renderAnswer3() {
+      const item = getCurrentItem3();
+      if (!answers3[currentIndex3]) {
+        quiz3Overlay.classList.remove('visible');
+        quiz3Overlay.classList.remove('counts-agrees');
+        quiz3Explanation.textContent = '';
+        return;
+      }
+      const isMatch = (answers3[currentIndex3] === 'approve' && item.candidateAnswer === 'Approve') ||
+                      (answers3[currentIndex3] === 'deny' && item.candidateAnswer === 'Deny');
+      if (item.alwaysAgree || isMatch) {
+        quiz3Overlay.classList.add('counts-agrees');
+        quiz3Overlay.textContent = '';
+      } else {
+        quiz3Overlay.classList.remove('counts-agrees');
+        quiz3Overlay.textContent = `Candidate Vote: ${item.candidateAnswer}`;
+      }
+      renderExplanation(quiz3Explanation, item, answers3[currentIndex3]);
+      quiz3Overlay.classList.add('visible');
+    }
+
+    function updateQuiz3() {
+      const item = getCurrentItem3();
+      quiz3ImageEl.src = 'commission-meeting-images/' + item.image;
+      quiz3StatusEl.textContent = `Image ${currentIndex3 + 1} of ${quizItems3.length}`;
+      next3Btn.style.display = currentIndex3 === quizItems3.length - 1 ? 'none' : '';
+      back3Btn.style.display = currentIndex3 === 0 ? 'none' : '';
+      if (answers3[currentIndex3] === 'approve') {
+        approve3Btn.classList.add('primary');
+        approve3Btn.classList.remove('outline');
+        deny3Btn.classList.add('outline');
+        deny3Btn.classList.remove('primary');
+      } else if (answers3[currentIndex3] === 'deny') {
+        deny3Btn.classList.add('primary');
+        deny3Btn.classList.remove('outline');
+        approve3Btn.classList.add('outline');
+        approve3Btn.classList.remove('primary');
+      } else {
+        approve3Btn.classList.add('outline');
+        approve3Btn.classList.remove('primary');
+        deny3Btn.classList.add('outline');
+        deny3Btn.classList.remove('primary');
+      }
+      renderAnswer3();
+    }
+
+    approve3Btn.addEventListener('click', () => {
+      answers3[currentIndex3] = 'approve';
+      updateQuiz3();
+    });
+
+    deny3Btn.addEventListener('click', () => {
+      answers3[currentIndex3] = 'deny';
+      updateQuiz3();
+    });
+
+    back3Btn.addEventListener('click', () => {
+      currentIndex3 = (currentIndex3 - 1 + quizItems3.length) % quizItems3.length;
+      updateQuiz3();
+    });
+
+    next3Btn.addEventListener('click', () => {
+      if (currentIndex3 < quizItems3.length - 1) {
+        currentIndex3 += 1;
+        updateQuiz3();
+        scrollToQuizTop('quiz-box-03-18');
+      }
+    });
+
+    updateQuiz1();
+    updateQuiz2();
+    updateQuiz3();
+  </script>
+</body>
+</html>
