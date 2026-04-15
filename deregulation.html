@@ -44,7 +44,7 @@
     .main.circle {
       width:var(--main-size);
       height:var(--main-size);
-      padding:1rem;
+      padding: calc(var(--main-size) * 0.5);
       z-index:5;
       font-size:calc(var(--main-size) * 0.11);
     }
@@ -81,7 +81,7 @@
       z-index:2;
       font-size:calc(var(--orbit-size) * 0.08);
       line-height:1.2;
-      padding:0 calc(var(--orbit-size) * 0.08);
+      padding:0 calc(var(--orbit-size) * 0.05);
       display:block;
       text-wrap:balance;
     }
@@ -117,7 +117,7 @@
       display:flex;
     }
     .detail-card {
-      width:min(100%, 520px);
+      width:min(100%, 720px);
       background:#fff;
       border:4px solid var(--accent);
       border-radius:18px;
@@ -265,7 +265,7 @@
       }
       if (currentOrbitKey === 'orbit-5' && detailStep === 0) {
         detailStep = 1;
-        overlayText.textContent = 'Incentives for sterilization';
+        overlayText.textContent = 'Incentives for working';
         overlayLink.innerHTML = '';
         return;
       }
