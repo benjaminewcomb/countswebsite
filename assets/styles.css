@@ -45,7 +45,7 @@ body{
 .hero h2{font-size:2.25rem;margin:.1rem 0;color:var(--navy);text-transform:uppercase;letter-spacing:3px;}
 .slogan{font-size:1.2rem;color:var(--accent-dark);margin:.25rem 0 1rem;font-style:italic;}
 .hero-ctas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;align-items:stretch}
-.hero-ctas .btn{width:100%;min-height:4.5rem;display:flex;align-items:center;justify-content:center;text-align:center;white-space:normal;padding:.8rem 1rem}
+.hero-ctas .btn{width:100%;min-height:4.5rem;display:flex;align-items:center;justify-content:center;text-align:center;white-space:normal;padding:clamp(.7rem,1.2vw,.8rem) clamp(.85rem,2vw,1rem);font-size:clamp(.72rem,1vw + .45rem,.98rem);line-height:1.2;letter-spacing:clamp(.02em,.12vw,.08em);text-wrap:balance}
 .hero-ctas .btn:nth-child(odd){background:var(--accent);color:var(--navy);border-color:var(--accent)}
 .hero-ctas .btn:nth-child(even){background:transparent;color:var(--navy);border-color:var(--accent)}
 .hero-ctas .btn.outline{background:transparent;color:var(--navy);border-color:var(--accent)}
@@ -118,4 +118,8 @@ body{
   .site-nav{display:none}
   .menu-toggle{display:block}
   .hero-inner{flex-direction:column-reverse}
+}
+
+@media (max-width:560px){
+  .hero-ctas .btn{font-size:clamp(.7rem,2.2vw + .2rem,.88rem);letter-spacing:.03em}
 }
