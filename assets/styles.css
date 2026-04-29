@@ -28,10 +28,10 @@ body{
 }
 
 .container{max-width:var(--max-width);margin:0 auto;padding:1.5rem}
-.site-header{position:relative;height:clamp(200px,38vw,340px);overflow:hidden;border:none;top:0;z-index:1;}
+.site-header{position:relative;height:clamp(500px,38vw,540px);overflow:hidden;border:none;top:0;z-index:1;}
 .header-inner{position:absolute;inset:0;max-width:none;padding:0;}
 .header-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0.75;filter:brightness(0.7) saturate(1.05);z-index:0;}
-img.header-video{opacity:1;filter:brightness(1.08);transform:scaleX(1.25);transform-origin:center;}
+img.header-video{opacity:1;filter:brightness(1.08);transform:scale(1.25);transform-origin:center;}
 .tagline{margin:0;font-size:1rem;color:var(--muted);font-style:italic;}
 .site-nav a{margin-left:1.5rem;color:var(--navy);text-decoration:none;font-weight:700;position:relative;}
 .site-nav a:before{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
